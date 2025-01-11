@@ -3,9 +3,10 @@ import './Header.css'
 const Header = () => {
     return (
         <div>
-            <h2>Navber</h2>
             <nav>
+                <span>My Website</span>
                 <Link to='/'>Home</Link>
+                <Link to='/users'>Users</Link>
                 <Link to='/about'>About</Link>
                 <Link to='/contact'>Contact Us</Link>
             </nav>
