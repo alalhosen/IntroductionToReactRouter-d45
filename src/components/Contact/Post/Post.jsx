@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Post = ({post}) => {
     const {id, title}=post;
@@ -11,6 +12,8 @@ const Post = ({post}) => {
         <div style={postStyle}>
             <h2>Post of id:{id}</h2>
             <p>title:{title}</p>
+            <Link to={`/post/${id}`}>Post Details</Link>
+            <Link to={`/post/${id}`}><button>Click Me</button></Link>
         </div>
     );
 };

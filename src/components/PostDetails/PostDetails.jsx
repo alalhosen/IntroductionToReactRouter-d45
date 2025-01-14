@@ -1,10 +1,16 @@
+import { useLoaderData } from "react-router-dom";
 
 const PostDetails = () => {
-    return (
-        <div>
-<h2>Post details about</h2>            
-        </div>
-    );
+    const post=useLoaderData();
+    const {id, title, body} =post;
+  return (
+    <div>
+      <h2>Post details about: {id}</h2>
+      <p>Title: {title}</p>
+      <p><small>{body}</small></p>
+
+    </div>
+  );
 };
 
 export default PostDetails;
