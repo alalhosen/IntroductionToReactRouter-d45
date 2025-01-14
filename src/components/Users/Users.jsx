@@ -10,7 +10,7 @@ const Users = () => {
     <div>
       <h2>Our Users: {users.length}</h2>
       <p>Use the Users</p>
-      <div className="users">
+      <div className="usersc">
         {
           users.map(user=> <User key={user.id} user={user}></User>)
         }

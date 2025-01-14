@@ -1,10 +1,12 @@
+import { useLoaderData } from "react-router-dom";
 
 const Posts = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const posts = useLoaderData();
+  return (
+    <div>
+      <h2>posts: {posts.length}</h2>
+    </div>
+  );
 };
 
 export default Posts;
