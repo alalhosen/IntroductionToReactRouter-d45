@@ -1,21 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Post = ({post}) => {
-    const {id, title}=post;
+const Post = ({ post }) => {
+  const { id, title } = post;
 
-    const postStyle = {
-        border: "2px solid lime",
-        padding: "5px",
-        borderRadius: "20px",
-      };
-    return (
-        <div style={postStyle}>
-            <h2>Post of id:{id}</h2>
-            <p>title:{title}</p>
-            <Link to={`/post/${id}`}>Post Details</Link>
-            <Link to={`/post/${id}`}><button>Click Me</button></Link>
-        </div>
-    );
+  const navigate = useNavigate();
+  const postStyle = {
+    border: "2px solid lime",
+    padding: "5px",
+    borderRadius: "20px",
+  };
+
+  const handleShowDetail = () => {
+    navigate(`/post/${id}`);
+  }
+  return (
+    <div style={postStyle}>
+      <h2>Post of id:{id}</h2>
+      <p>title:{title}</p>
+      <Link to={`/post/${id}`}>Post Details</Link>
+      <Link to={`/post/${id}`}>
+        <button>Click Me</button>
+      </Link>
+      <button onClick={handleShowDetail}>Click to see details</button>
+    </div>
+  );
 };
 
 export default Post;
